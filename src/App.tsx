@@ -27,6 +27,13 @@ function App() {
       </header>
 
       <main>
+                <section id="inicio" className="hero">
+          <div>
+            <h2>Sua estante, sua vez</h2>
+            <p>Descubra o que ler e acompanhe seu progresso.</p>
+          </div>
+          <img src="./assets/img/hero.png" alt="Estante de livros" />
+        </section>
       </main>
     </>
   )

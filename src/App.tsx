@@ -27,14 +27,19 @@ function App() {
       </header>
 
       <main>
-                <section id="inicio" className="hero">
+        <section id="inicio" className="hero">
           <div>
             <h2>Sua estante, sua vez</h2>
             <p>Descubra o que ler e acompanhe seu progresso.</p>
+            <div className="search">
+              <input type="text" placeholder="Buscar por título ou autor" />
+              <button type="button">Buscar</button>
+            </div>
           </div>
           <img src="./assets/img/hero.png" alt="Estante de livros" />
         </section>
-                <section id="lendo-agora">
+
+        <section id="lendo-agora">
           <header>
             <h2>Lendo agora</h2>
             <p>4 livros</p>
@@ -90,7 +95,8 @@ function App() {
             </article>
           </div>
         </section>
-                <section id="estante">
+
+        <section id="estante">
           <header>
             <h2>Estante completa</h2>
             <p>12 livros</p>
@@ -224,7 +230,8 @@ function App() {
           </div>
         </section>
       </main>
-            <footer id="sobre">
+
+      <footer id="sobre">
         <div className="container">
           <div className="columns">
             <div>

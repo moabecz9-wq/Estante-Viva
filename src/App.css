@@ -272,3 +272,78 @@ main .percent {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
+/***********
+* ESTANTE COMPLETA
+***********/
+.toggle {
+    display: flex;
+    gap: 0.5rem;
+}
+.toggle button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.toggle button.active {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.library-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 8px solid var(--shelf);
+}
+.book figure {
+    grid-column: 1 / -1;
+    aspect-ratio: 4 / 3;
+}
+.book h3,
+.book .author {
+    grid-column: 1 / -1;
+    padding-inline: 1rem;
+}
+.book h3 {
+    padding-top: 1rem;
+}
+.book .author {
+    padding-top: 0.25rem;
+}
+.book .genre {
+    grid-column: 1;
+    align-self: center;
+    padding-block: 1rem;
+    padding-left: 1rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+.book .rating {
+    grid-column: 2;
+    align-self: center;
+    padding-block: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+/* Tablets >= 768px */
+@media (min-width: 48rem) {
+    .library-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Desktops >= 1024px */
+@media (min-width: 64rem) {
+    .library-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}

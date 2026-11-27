@@ -4,5 +4,17 @@ Trabalho de Conclusão da Disciplina de Desenvolvimento em Ambiente Web.
 ## Autor
 Moabe Diogenes Czarnobaj
 
-## Fase 1
-Entrega dos wireframes mobile, tablet e desktop.
+## Tema
+Página para acompanhar leituras e explorar uma estante de livros: a listagem "Lendo agora" mostra o progresso de cada livro e a "Estante completa" reúne os títulos com gênero e nota.
+
+## Como executar
+
+    npm install
+    npm run dev
+
+Depois abra http://localhost:5173 no navegador.
+
+## Fonte dos dados
+
+- **Estante completa (listagem principal):** arquivo JSON local em `public/livros.json`, carregado com `fetch` dentro de `useEffect`, com estados de carregando e de erro.
+- **Lendo agora (listagem secundária):** vetor de objetos em `src/data/livros.ts`.

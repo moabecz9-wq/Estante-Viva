@@ -18,3 +18,15 @@ Depois abra http://localhost:5173 no navegador.
 
 - **Estante completa (listagem principal):** arquivo JSON local em `public/livros.json`, carregado com `fetch` dentro de `useEffect`, com estados de carregando e de erro.
 - **Lendo agora (listagem secundária):** vetor de objetos em `src/data/livros.ts`.
+
+## Fases do TCD
+
+- **Fase 1:** wireframes mobile, tablet e desktop, na pasta docs.
+- **Fase 2:** página construída no App.tsx, com CSS mobile first e variáveis em :root.
+- **Fase 3:** componentes em src/components, types e vetores em src/data, listagens com map e key, e alternância Grade/Lista com useState.
+- **Fase 4:** listagem principal carregada de public/livros.json com fetch em useEffect, com estados de carregando e de erro.
+
+## Desafios bonificados
+
+- **Busca:** campo controlado que filtra a estante em tempo real.
+- **Modo escuro:** alternância entre tema claro e escuro controlada por estado, com variáveis CSS.

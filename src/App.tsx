@@ -13,6 +13,7 @@ function App() {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("/livros.json")
@@ -32,6 +33,10 @@ function App() {
       })
   }, []);
 
+  const filteredBooks = books.filter((book) =>
+    (book.title + " " + book.author).toLowerCase().includes(search.toLowerCase())
+  )
+
   function handleSelectView(newView: string) {
     setView(newView)
   }
@@ -41,10 +46,10 @@ function App() {
       <Header />
 
       <main>
-        <Hero />
+        <Hero search={search} onSearch={setSearch} />
         <ReadingList readings={readings} />
         <BookList
-          books={books}
+          books={filteredBooks}
           view={view}
           onSelectView={handleSelectView}
           loading={loading}

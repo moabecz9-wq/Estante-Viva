@@ -24,7 +24,11 @@ export function BookList({ books, view, onSelectView, loading, error }: BookList
 
       {error && <p className="status error">{error}</p>}
 
-      {!loading && !error && (
+      {!loading && !error && books.length == 0 && (
+        <p className="status">Nenhum livro encontrado.</p>
+      )}
+
+      {!loading && !error && books.length > 0 && (
         <div className={view == 'lista' ? 'library-list list-view' : 'library-list'}>
           {books.map((book) => (
             <BookCard key={book.id} book={book} />

@@ -446,3 +446,16 @@ footer .container > p {
     grid-column: 3;
     padding-top: 0;
 }
+
+/***********
+* STATUS
+***********/
+.status {
+    grid-column: 1 / -1;
+    padding: var(--space-3);
+    text-align: center;
+    color: var(--text-muted);
+}
+.error {
+    color: #b91c1c;
+}

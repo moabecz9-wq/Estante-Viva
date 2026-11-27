@@ -6,23 +6,31 @@ type BookListProps = {
   books: Book[]
   view: string
   onSelectView: (view: string) => void
+  loading: boolean
+  error: string
 }
 
-export function BookList({ books, view, onSelectView }: BookListProps) {
+export function BookList({ books, view, onSelectView, loading, error }: BookListProps) {
   return (
     <section id="estante">
       <header>
         <h2>Estante completa</h2>
-        <p>{books.length} livros</p>
+        <p>{loading ? '...' : `${books.length} livros`}</p>
       </header>
 
       <ViewToggle view={view} onSelectView={onSelectView} />
 
-      <div className={view == 'lista' ? 'library-list list-view' : 'library-list'}>
-        {books.map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))}
-      </div>
+      {loading && <p className="status">Carregando livros...</p>}
+
+      {error && <p className="status error">{error}</p>}
+
+      {!loading && !error && (
+        <div className={view == 'lista' ? 'library-list list-view' : 'library-list'}>
+          {books.map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

@@ -14,6 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     fetch("/livros.json")
@@ -33,6 +34,10 @@ function App() {
       })
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark)
+  }, [dark]);
+
   const filteredBooks = books.filter((book) =>
     (book.title + " " + book.author).toLowerCase().includes(search.toLowerCase())
   )
@@ -43,7 +48,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header dark={dark} onToggleDark={() => setDark(!dark)} />
 
       <main>
         <Hero search={search} onSearch={setSearch} />

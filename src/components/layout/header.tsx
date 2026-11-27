@@ -1,4 +1,9 @@
-export function Header() {
+type HeaderProps = {
+  dark: boolean
+  onToggleDark: () => void
+}
+
+export function Header({ dark, onToggleDark }: HeaderProps) {
   return (
     <header>
       <div className="container">
@@ -17,7 +22,7 @@ export function Header() {
         </nav>
 
         <div className="actions">
-          <button type="button">☾</button>
+          <button type="button" onClick={onToggleDark}>{dark ? '☀' : '☾'}</button>
           <button type="button" className="menu-button">☰</button>
         </div>
       </div>
